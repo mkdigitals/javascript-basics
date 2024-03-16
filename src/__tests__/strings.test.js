@@ -12,11 +12,11 @@ describe('sayHello', () => {
     expect(sayHello('world')).toEqual('Hello, world!');
   });
 
-  xit('returns "Hello MCR Codes!" when passed "MCR Codes"', () => {
+  it('returns "Hello MCR Codes!" when passed "MCR Codes"', () => {
     expect(sayHello('MCR Codes')).toEqual('Hello, MCR Codes!');
   });
 
-  xit('returns "Hello fsghjdfkhgf!" when passed "fsghjdfkhgf"', () => {
+  it('returns "Hello fsghjdfkhgf!" when passed "fsghjdfkhgf"', () => {
     expect(sayHello('fsghjdfkhgf')).toEqual('Hello, fsghjdfkhgf!');
   });
 });

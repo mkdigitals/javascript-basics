@@ -1,61 +1,118 @@
 const getNthElement = (index, array) => {
-  // your code here
+  let actualIndex = index % array.length;
+  return array[actualIndex];
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  let string = '';
+  for (let i = 0; i < array.length - 1; i += 1) {
+    string += array[i] + ',' ;
+  }
+  string += array[array.length - 1];
+  return string;
 };
 
 const csvStringToArray = string => {
-  // your code here
+  const array = [];
+  for (let i = 0; i < string.length; i += 1) {
+    if (string[i] !== ',') {
+      array.push(string[i]);
+    }
+  }
+  return array;
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element);
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  let array2 = Array.from(array);
+  array2.push(element);
+  return array2;
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  let stringArray = [];
+  for (let i = 0; i < numbers.length; i += 1) {
+    stringArray.push(numbers[i].toString());
+  }
+  return stringArray;
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  for (let i = 0; i < strings.length; i += 1) {
+    strings[i] = strings[i].toUpperCase();
+  }
+  return strings;
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  var reversedString = '';
+  for (let i = 0; i < strings.length; i += 1) {
+    reversedString = '';
+    for (let j = strings[i].length - 1; j >= 0; j -= 1) {
+      reversedString += strings[i][j];
+    }
+    strings[i] = reversedString;
+  }
+  return strings;
 };
 
 const onlyEven = numbers => {
-  // your code here
+  let evenNumbers = numbers.filter(number => number % 2 === 0);
+  return evenNumbers;
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  let array2 = Array.from(array);
+  removeNthElement(index, array2);
+  return array2;
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  const stringsStartingWithVowel = strings.filter(
+    element =>
+      element[0] === 'a' ||
+      element[0] === 'e' ||
+      element[0] === 'i' ||
+      element[0] === 'o' ||
+      element[0] === 'u' ||
+      element[0] === 'A' ||
+      element[0] === 'E' ||
+      element[0] === 'I' ||
+      element[0] === 'O' ||
+      element[0] === 'U'
+  );
+  return stringsStartingWithVowel;
 };
 
 const removeSpaces = string => {
-  // your code here
+  let newString = '';
+  let i = 0;
+  while (i < string.length) {
+    if (string[i] !== ' ') {
+      newString += string[i];
+    }
+    i += 1;
+  }
+  return newString;
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  return numbers.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  strings.sort((a, b) => a[a.length - 1].localeCompare(b[b.length - 1]));
+  return strings;
 };
 
 module.exports = {
